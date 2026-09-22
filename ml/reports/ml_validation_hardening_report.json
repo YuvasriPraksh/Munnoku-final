@@ -1,0 +1,289 @@
+{
+  "dataset_notice": "SYNTHETIC / DEMONSTRATION DATA",
+  "evaluation_period": {
+    "train_period": "2025-01-01 to 2025-04-30 (6000 rows)",
+    "val_period": "2025-05-01 to 2025-05-30 (1500 rows)",
+    "test_period": "2025-05-31 to 2025-06-29 (1500 rows)"
+  },
+  "target_generation_audit": {
+    "mechanism": "Target Mastitis_Event_In_7_14_Days set to 1 when a simulated clinical episode occurs 7 to 14 days in the future.",
+    "synthetic_generator_dependency": "Simulated subclinical severity linearly alters EC, yield, rumination, activity, milk temp, and SCC. The ML model learns the generator's underlying mathematical formulas under simulated conditions.",
+    "data_leakage_status": "No temporal data leakage. Feature space at time t exclusively uses observations up to time t."
+  },
+  "baseline_comparison": {
+    "Baseline_A_History_Rule": {
+      "Accuracy": 0.9653333333333334,
+      "Precision": 0.23214285714285715,
+      "Recall": 0.5909090909090909,
+      "F1_Score": 0.3333333333333333,
+      "Specificity": 0.9709066305818674,
+      "ROC_AUC": 0.7809078607454791,
+      "PR_AUC": 0.414525974025974,
+      "Confusion_Matrix": {
+        "TN": 1435,
+        "FP": 43,
+        "FN": 9,
+        "TP": 13
+      }
+    },
+    "Baseline_B_Simple_EC_Threshold": {
+      "Accuracy": 0.962,
+      "Precision": 0.18181818181818182,
+      "Recall": 0.45454545454545453,
+      "F1_Score": 0.2597402597402597,
+      "Specificity": 0.969553450608931,
+      "ROC_AUC": 0.7120494525771928,
+      "PR_AUC": 0.3221818181818182,
+      "Confusion_Matrix": {
+        "TN": 1433,
+        "FP": 45,
+        "FN": 12,
+        "TP": 10
+      }
+    },
+    "Baseline_C_Individual_Deviation": {
+      "Accuracy": 0.944,
+      "Precision": 0.17708333333333334,
+      "Recall": 0.7727272727272727,
+      "F1_Score": 0.288135593220339,
+      "Specificity": 0.9465493910690121,
+      "ROC_AUC": 0.8596383318981424,
+      "PR_AUC": 0.47657196969696963,
+      "Confusion_Matrix": {
+        "TN": 1399,
+        "FP": 79,
+        "FN": 5,
+        "TP": 17
+      }
+    },
+    "Random_Forest_ML": {
+      "Accuracy": 0.992,
+      "Precision": 0.8571428571428571,
+      "Recall": 0.5454545454545454,
+      "F1_Score": 0.6666666666666666,
+      "Specificity": 0.9986468200270636,
+      "ROC_AUC": 0.8406323040964448,
+      "PR_AUC": 0.6304893667291074,
+      "Confusion_Matrix": {
+        "TN": 1476,
+        "FP": 2,
+        "FN": 10,
+        "TP": 12
+      }
+    }
+  },
+  "feature_ablation_study": {
+    "A_Static_Features_Only": {
+      "Accuracy": 0.9733333333333334,
+      "Precision": 0.05,
+      "Recall": 0.045454545454545456,
+      "F1_Score": 0.047619047619047616,
+      "Specificity": 0.9871447902571042,
+      "ROC_AUC": 0.605009841308894,
+      "PR_AUC": 0.017939445569895567,
+      "Confusion_Matrix": {
+        "TN": 1459,
+        "FP": 19,
+        "FN": 21,
+        "TP": 1
+      }
+    },
+    "B_Milk_Features": {
+      "Accuracy": 0.9893333333333333,
+      "Precision": 0.65,
+      "Recall": 0.5909090909090909,
+      "F1_Score": 0.6190476190476191,
+      "Specificity": 0.9952638700947226,
+      "ROC_AUC": 0.7634395374584819,
+      "PR_AUC": 0.5575262397788842,
+      "Confusion_Matrix": {
+        "TN": 1471,
+        "FP": 7,
+        "FN": 9,
+        "TP": 13
+      }
+    },
+    "C_Behavior_Features": {
+      "Accuracy": 0.9306666666666666,
+      "Precision": 0.07291666666666667,
+      "Recall": 0.3181818181818182,
+      "F1_Score": 0.11864406779661017,
+      "Specificity": 0.9397834912043301,
+      "ROC_AUC": 0.5772850289088449,
+      "PR_AUC": 0.04068526807021579,
+      "Confusion_Matrix": {
+        "TN": 1389,
+        "FP": 89,
+        "FN": 15,
+        "TP": 7
+      }
+    },
+    "D_Environmental_Features": {
+      "Accuracy": 0.9853333333333333,
+      "Precision": 0.5,
+      "Recall": 0.045454545454545456,
+      "F1_Score": 0.08333333333333333,
+      "Specificity": 0.9993234100135318,
+      "ROC_AUC": 0.6711157583958667,
+      "PR_AUC": 0.06965160399468609,
+      "Confusion_Matrix": {
+        "TN": 1477,
+        "FP": 1,
+        "FN": 21,
+        "TP": 1
+      }
+    },
+    "E_Temporal_Features": {
+      "Accuracy": 0.9706666666666667,
+      "Precision": 0.0,
+      "Recall": 0.0,
+      "F1_Score": 0.0,
+      "Specificity": 0.9851150202976996,
+      "ROC_AUC": 0.5214356009349244,
+      "PR_AUC": 0.015003211777184673,
+      "Confusion_Matrix": {
+        "TN": 1456,
+        "FP": 22,
+        "FN": 22,
+        "TP": 0
+      }
+    },
+    "F_Temporal_Plus_Baseline_Deviations": {
+      "Accuracy": 0.9926666666666667,
+      "Precision": 1.0,
+      "Recall": 0.5,
+      "F1_Score": 0.6666666666666666,
+      "Specificity": 1.0,
+      "ROC_AUC": 0.8366957805388117,
+      "PR_AUC": 0.5872025087471241,
+      "Confusion_Matrix": {
+        "TN": 1478,
+        "FP": 0,
+        "FN": 11,
+        "TP": 11
+      }
+    },
+    "G_All_Features_Except_Convergence": {
+      "Accuracy": 0.9913333333333333,
+      "Precision": 0.8,
+      "Recall": 0.5454545454545454,
+      "F1_Score": 0.6486486486486487,
+      "Specificity": 0.9979702300405954,
+      "ROC_AUC": 0.8731240004920655,
+      "PR_AUC": 0.6279366522789496,
+      "Confusion_Matrix": {
+        "TN": 1475,
+        "FP": 3,
+        "FN": 10,
+        "TP": 12
+      }
+    },
+    "H_All_Features_Plus_Multi_Signal_Convergence": {
+      "Accuracy": 0.992,
+      "Precision": 0.8571428571428571,
+      "Recall": 0.5454545454545454,
+      "F1_Score": 0.6666666666666666,
+      "Specificity": 0.9986468200270636,
+      "ROC_AUC": 0.8406323040964448,
+      "PR_AUC": 0.6304893667291074,
+      "Confusion_Matrix": {
+        "TN": 1476,
+        "FP": 2,
+        "FN": 10,
+        "TP": 12
+      }
+    }
+  },
+  "probability_calibration": {
+    "brier_score": 0.0113,
+    "calibration_curve": {
+      "mean_predicted_probability": [
+        0.0469,
+        0.2746,
+        0.4632,
+        0.6976,
+        0.8655
+      ],
+      "fraction_of_positives": [
+        0.0055,
+        0.0345,
+        0.2222,
+        0.75,
+        1.0
+      ]
+    },
+    "calibration_assessment": "Uncalibrated probabilities typical for decision tree ensembles with class weighting. Tree-based probabilities tend to cluster near 0 and 1."
+  },
+  "lead_time_analysis": {
+    "mean_lead_time_days": 7.0,
+    "median_lead_time_days": 7.0,
+    "min_lead_time_days": 7,
+    "max_lead_time_days": 7,
+    "pct_detected_gte_7d": 100.0,
+    "pct_detected_gte_14d": 0.0,
+    "false_alarm_rate": 0.357,
+    "lead_time_disclaimer": "Synthetic-data evaluation. Theoretical 7-14 day lead time reflects simulated physiological shift parameters."
+  },
+  "shap_verification_examples": {
+    "COW-027": [
+      {
+        "factor_code": "Last_SCC_Cell_mL",
+        "description": "Somatic Cell Count elevation history",
+        "impact_score": 0.106,
+        "direction": "REDUCES_RISK"
+      },
+      {
+        "factor_code": "CMT_Score_Numeric",
+        "description": "CMT reactive score history",
+        "impact_score": 0.064,
+        "direction": "REDUCES_RISK"
+      },
+      {
+        "factor_code": "Electrical_Conductivity_mS_cm",
+        "description": "Electrical Conductivity reading",
+        "impact_score": 0.052,
+        "direction": "REDUCES_RISK"
+      }
+    ],
+    "COW-012": [
+      {
+        "factor_code": "CMT_Score_Numeric",
+        "description": "CMT reactive score history",
+        "impact_score": 0.068,
+        "direction": "REDUCES_RISK"
+      },
+      {
+        "factor_code": "Electrical_Conductivity_mS_cm",
+        "description": "Electrical Conductivity reading",
+        "impact_score": 0.059,
+        "direction": "REDUCES_RISK"
+      },
+      {
+        "factor_code": "ec_deviation_pct",
+        "description": "Milk Electrical Conductivity elevated relative to 14-day baseline",
+        "impact_score": 0.054,
+        "direction": "REDUCES_RISK"
+      }
+    ],
+    "COW-005": [
+      {
+        "factor_code": "Last_SCC_Cell_mL",
+        "description": "Somatic Cell Count elevation history",
+        "impact_score": 0.102,
+        "direction": "REDUCES_RISK"
+      },
+      {
+        "factor_code": "CMT_Score_Numeric",
+        "description": "CMT reactive score history",
+        "impact_score": 0.054,
+        "direction": "REDUCES_RISK"
+      },
+      {
+        "factor_code": "ec_deviation_pct",
+        "description": "Milk Electrical Conductivity elevated relative to 14-day baseline",
+        "impact_score": 0.039,
+        "direction": "REDUCES_RISK"
+      }
+    ]
+  }
+}

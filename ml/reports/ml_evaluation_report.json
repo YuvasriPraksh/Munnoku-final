@@ -1,0 +1,77 @@
+{
+  "dataset_type": "SYNTHETIC / DEMONSTRATION DATA",
+  "best_model": "Random Forest",
+  "feature_count": 29,
+  "train_samples": 6250,
+  "test_samples": 1350,
+  "model_performance_comparison": {
+    "Logistic Regression": {
+      "Accuracy": 0.9637037037037037,
+      "Precision": 0.23214285714285715,
+      "Recall": 0.6842105263157895,
+      "F1_Score": 0.3466666666666667,
+      "Specificity": 0.9676934635612322,
+      "ROC_AUC": 0.9275574360393847,
+      "PR_AUC": 0.14996857481813394,
+      "Confusion_Matrix": {
+        "TN": 1288,
+        "FP": 43,
+        "FN": 6,
+        "TP": 13
+      }
+    },
+    "Random Forest": {
+      "Accuracy": 0.9940740740740741,
+      "Precision": 0.9230769230769231,
+      "Recall": 0.631578947368421,
+      "F1_Score": 0.75,
+      "Specificity": 0.9992486851990984,
+      "ROC_AUC": 0.9052157064336273,
+      "PR_AUC": 0.7207343403715636,
+      "Confusion_Matrix": {
+        "TN": 1330,
+        "FP": 1,
+        "FN": 7,
+        "TP": 12
+      }
+    },
+    "XGBoost": {
+      "Accuracy": 0.9874074074074074,
+      "Precision": 0.5416666666666666,
+      "Recall": 0.6842105263157895,
+      "F1_Score": 0.6046511627906976,
+      "Specificity": 0.9917355371900827,
+      "ROC_AUC": 0.8825971766380639,
+      "PR_AUC": 0.6708336923005039,
+      "Confusion_Matrix": {
+        "TN": 1320,
+        "FP": 11,
+        "FN": 6,
+        "TP": 13
+      }
+    },
+    "LightGBM": {
+      "Accuracy": 0.9896296296296296,
+      "Precision": 0.6190476190476191,
+      "Recall": 0.6842105263157895,
+      "F1_Score": 0.65,
+      "Specificity": 0.9939894815927873,
+      "ROC_AUC": 0.9224564039701056,
+      "PR_AUC": 0.6627489098513129,
+      "Confusion_Matrix": {
+        "TN": 1323,
+        "FP": 8,
+        "FN": 6,
+        "TP": 13
+      }
+    }
+  },
+  "lead_time_evaluation": {
+    "mean_lead_time_days": 7.0,
+    "median_lead_time_days": 7.0,
+    "pct_detected_gte_7d": 100.0,
+    "pct_detected_gte_14d": 0.0,
+    "false_alarm_rate": 0.133,
+    "lead_time_validation_note": "Lead-time evaluation conducted on synthetic longitudinal time-series data. 7-14 day lead time represents theoretical capability under simulated physiological parameter shifts."
+  }
+}
